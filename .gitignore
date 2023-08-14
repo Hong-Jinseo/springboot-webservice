@@ -5,6 +5,10 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### 구글 로그인을 위한 클라이언트 id 및 pw ###
+application-oauth.properties
+
+
 ### STS ###
 .apt_generated
 .classpath
