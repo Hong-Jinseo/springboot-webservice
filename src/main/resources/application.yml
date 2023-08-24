@@ -1,0 +1,38 @@
+spring:
+    h2:
+        console:
+            enabled: 'true'
+
+    jpa:
+        show_sql: 'true'
+        properties:
+            hibernate:
+                dialect:
+                    nodeValue: org.hibernate.dialect.MySQL5InnoDBDialect
+                    storage_engine: innodb
+
+    security:
+        oauth2:
+            client:
+                registration:
+                    google:
+                        client-secret: test
+                        client-id: test
+                        scope: profile,email
+    datasource:
+        hikari:
+            jdbc-url: jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
+
+    profiles:
+        group:
+            real: real,real-db,oauth
+        include: oauth
+
+    session:
+        store-type: jdbc
+        jdbc.initialize-schema: always
+
+server:
+    servlet:
+        encoding:
+            force-response: 'true'
